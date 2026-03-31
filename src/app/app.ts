@@ -5,7 +5,7 @@ import { DataBiding } from './components/data-biding/data-biding';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Variables, DataBiding],
+  imports: [DataBiding],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
