@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataBiding } from './data-biding';
+import { Signal } from './signal';
 
-describe('DataBiding', () => {
-  let component: DataBiding;
-  let fixture: ComponentFixture<DataBiding>;
+describe('Signal', () => {
+  let component: Signal;
+  let fixture: ComponentFixture<Signal>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DataBiding],
+      imports: [Signal],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DataBiding);
+    fixture = TestBed.createComponent(Signal);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -3,10 +3,10 @@ import { Component, signal } from '@angular/core';
 @Component({
   selector: 'app-data-biding',
   imports: [],
-  templateUrl: './data-biding.html',
-  styleUrl: './data-biding.css',
+  templateUrl: './data-binding.component.html',
+  styleUrl: './data-binding.component.css',
 })
-export class DataBiding {
+export class DataBinding {
   courseName: String = 'Angular 21';
   teacherName = signal("Kodjane");
 

@@ -1,13 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Variables } from './components/variables/variables';
-import { DataBiding } from './components/data-biding/data-biding';
+import { DataBinding } from './components/data-biding/data-binding.component';
 
 @Component({
   selector: 'app-root',
-  imports: [DataBiding],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('angular21-tutorial');
