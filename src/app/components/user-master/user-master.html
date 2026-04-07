@@ -1,1 +1,59 @@
-<p>user-master works!</p>
+<div class="container">
+  <h1 class="mb-4">User Form (Bootstrap)</h1>
+
+  <form id="userForm" class="row g-3" #formData="ngForm">
+    <div class="col-md-2">
+      <label for="id" class="form-label">ID</label>
+      <input type="number" [(ngModel)]="userObject.id" class="form-control" id="id" name="id" value="0" min="0">
+    </div>
+
+    <div class="col-md-6">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" #name="ngModel" [(ngModel)]="userObject.name" required
+             minlength="5" class="form-control" id="name" name="name" autocomplete="name">
+
+      @if (name.touched || name.dirty) {
+        <div class="text-danger mt-1">
+          @if (name.errors?.['required']) {
+            <span>This is required</span>
+          } @else if (name.errors?.['minlength']) {
+            <span>Name must be at least 5 characters.</span>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="col-md-4">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" [(ngModel)]="userObject.username" class="form-control" id="username" name="username"
+             autocomplete="username">
+    </div>
+
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" [(ngModel)]="userObject.email" class="form-control" id="email" name="email"
+             autocomplete="email">
+    </div>
+
+    <div class="col-md-6">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" [(ngModel)]="userObject.password" class="form-control" id="password" name="password"
+             autocomplete="new-password">
+    </div>
+
+    <div class="col-md-6">
+      <label for="city" class="form-label">City</label>
+      <input type="text" [(ngModel)]="userObject.city" class="form-control" id="city" name="city">
+    </div>
+
+    <div class="col-md-6">
+      <label for="state" class="form-label">State</label>
+      <input type="text" [(ngModel)]="userObject.state" class="form-control" id="state" name="state">
+    </div>
+
+    <div class="col-12 d-flex justify-content-end">
+      <button type="reset" class="btn btn-outline-secondary me-2">Reset</button>
+      <button type="submit" [disabled]="formData.invalid" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+</div>
