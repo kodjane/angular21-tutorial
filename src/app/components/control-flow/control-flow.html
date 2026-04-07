@@ -1,0 +1,30 @@
+<div class="form-check">
+  <input [(ngModel)]="isActive" type="checkbox" class="form-check-input" id="exampleCheck1">
+  <label class="form-check-label" for="exampleCheck1">Check this box</label>
+</div>
+
+@if (isActive) {
+  <div class="mb-3">
+    <label for="inputField">Your Input:</label>
+    <input type="text" id="inputField" placeholder="Enter something...">
+  </div>
+}
+
+
+@if (isVisible()) {
+  <div class="btn btn-success" >
+    Button success Div
+  </div>
+} @else {
+  <div class="btn btn-danger" >
+    Button success Div
+  </div>
+}
+
+<div class="col-3" >
+
+  <button (click)="isToggleVisible()" class="bg-primary">Toggle</button>
+
+</div>
+
+
