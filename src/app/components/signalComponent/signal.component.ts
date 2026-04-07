@@ -1,5 +1,4 @@
-import { Component, signal } from '@angular/core';
-import { timeout } from 'rxjs';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-signal',

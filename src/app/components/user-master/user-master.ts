@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-user-master',
