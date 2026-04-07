@@ -10,11 +10,11 @@ import { FormsModule } from '@angular/forms';
 export class UserMaster {
   userObject = {
     id: 0,
-    name: '',
-    username: '',
-    email: '',
-    password: '',
-    city: '',
-    state: '',
+    name: "",
+    username: "",
+    email: "",
+    password: "",
+    city: "",
+    state: "",
   };
 }
