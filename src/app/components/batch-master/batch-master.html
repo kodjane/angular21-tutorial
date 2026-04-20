@@ -1,1 +1,69 @@
-<p>batch-master works!</p>
+<div class="container">
+  <h1 class="mb-4">User Form (Bootstrap)</h1>
+
+  <form id="userForm" class="row g-3" #formData="ngForm">
+    <div class="col-md-6">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" #name="ngModel" [(ngModel)]="userObject.name" required
+             minlength="5" class="form-control" id="name" name="name" autocomplete="name">
+
+      <div *ngIf="name.touched || name.dirty">
+        <div class="text-danger mt-1">
+          <div *ngIf="name.errors?.['required']">This is required</div>
+          <div *ngIf="name.errors?.['minlength']">Name must be at least 5 characters.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <span>This is a new span tag</span>
+    </div>
+
+    <div class="col-md-4">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" [(ngModel)]="userObject.email" class="form-control" id="email" name="email" autocomplete="email">
+    </div>
+
+    <div class="col-md-4">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" [(ngModel)]="userObject.username" class="form-control" id="username" name="username"
+             autocomplete="username">
+    </div>
+
+    <div class="col-12 d-flex justify-content-end">
+      <button type="reset" class="btn btn-outline-secondary me-2">Reset</button>
+      <button type="submit" [disabled]="formData.invalid"
+              (click)="toggleSaveUser()"
+              class="btn btn-primary">Save</button>
+    </div>
+  </form>
+
+  <!-- Users table -->
+  <div *ngIf="users && users.length; else noUsers" class="mt-4">
+    <h2 class="h5 mb-3">Users</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover table-bordered align-middle mb-0">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of users">
+            <td>{{ u.id }}</td>
+            <td>{{ u.name }}</td>
+            <td>{{ u.username }}</td>
+            <td>{{ u.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <ng-template #noUsers>
+    <div class="mt-4 alert alert-secondary">No users available.</div>
+  </ng-template>
+</div>
